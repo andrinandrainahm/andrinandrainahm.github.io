@@ -8,9 +8,21 @@ countDownDate.setSeconds(0)
 var mirava = countDownDate.getTime();
 var todaysdate = new Date();
 var today = todaysdate.getFullYear() + ' ' + todaysdate.getMonth() + ' ' +  todaysdate.getDate();
-var pausemidi = new Date("Feb " + todaysdate.getDate() + ", 22 12:30:00");
-var pausepm = new Date("Feb " + todaysdate.getDate() + ", 22 15:00:00");
-var pausematin = new Date("Feb " + todaysdate.getDate() + ", 22 10:00:00");
+var pausemidi = new Date();
+pausemidi.setHours(12)
+pausemidi.setMinutes(30)
+pausemidi.setSeconds(0)
+var pausepm = new Date();
+pausepm.setHours(15)
+pausepm.setMinutes(0)
+pausepm.setSeconds(0)
+var pausematin = new Date();
+pausematin.setHours(10)
+pausematin.setMinutes(0)
+pausematin.setSeconds(0)
+var pmatin = pausematin.getTime()
+var pmidi = pausemidi.getTime()
+var psoir = pausepm.getTime()
 var x;
 
 var pm = document.getElementById("pm")
@@ -24,7 +36,7 @@ am.addEventListener("click", function(){
         // Get today's date and time
         var now = new Date().getTime();
         // Find the distance between now and the count down date
-        var distance = pausematin - now;
+        var distance = pmatin - now;
 
 
         if(distance > 0)
@@ -58,7 +70,7 @@ midi.addEventListener("click", function(){
         // Get today's date and time
         var now = new Date().getTime();
         // Find the distance between now and the count down date
-        var distance = pausemidi - now;
+        var distance = pmidi - now;
 
 
         if(distance > 0)
@@ -92,7 +104,7 @@ pm.addEventListener("click", function(){
         // Get today's date and time
         var now = new Date().getTime();
         // Find the distance between now and the count down date
-        var distance = pausepm - now;
+        var distance = psoir - now;
 
 
         if(distance > 0)
